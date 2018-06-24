@@ -1,0 +1,37 @@
+ECMAScript or JavaScript
+JavaScript Virtual Machine 
+Chrome - V8
+Safari - JavascriptCore
+Edge - Chakra
+
+
+character set -> a-z,A-Z, 
+words -> literals
+sentences -> statement
+paras -> programs
+chapters -> solutions
+
+
+loosly typed language
+
+var foo;
+foo=10;
+
+comments
+
+Booleans
+--------
+true & false
+
+falsy
+-----
+null
+undefined
+false
+0, NaN
+''
+
+String
+------
+'abc'
+"ab'c"
