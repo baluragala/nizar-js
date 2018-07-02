@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <button id="one" style="width: 200px;height: 200px;background-color: yellow">CLICK</button>
+  <button id="two" style="width: 200px;height: 200px;background-color: yellow">CLICK</button>
+  <button id="three" style="width: 200px;height: 200px;background-color: yellow">CLICK</button>
+  <script>
+    function MakeCounter(start) {
+      this.count = start;
+      this.inc = function () {
+        console.log(this);
+        this.count++;
+        console.log("count", this.count)
+      }
+    }
+    var btn1 = document.querySelector('#one');
+    var btn2 = document.querySelector('#two');
+    var btn3 = document.querySelector('#three');
+    var counter = new MakeCounter(0);
+    var increment = counter.inc.bind(counter)
+
+    function toggleColor() {
+      this.style.backgroundColor = 'red';
+      increment();
+    }
+    btn1.addEventListener('click', toggleColor)
+    btn2.addEventListener('click', toggleColor)
+    btn3.addEventListener('click', toggleColor)
+
+  </script>
+</body>
+
+</html>
