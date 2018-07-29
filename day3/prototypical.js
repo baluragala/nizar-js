@@ -22,6 +22,6 @@ class Person {
 class Student extends Person {
   constructor(name, age, grade) {
     super(name, age);
-    this.age = age;
+    this.grade = grade;
   }
 }

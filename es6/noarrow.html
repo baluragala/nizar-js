@@ -1,0 +1,25 @@
+<html>
+
+<head></head>
+
+<body>
+  <button id="btnglow1" style="width:100px; height: 100px; font-size:2em">Glow</button>
+  <button id="btnglow2" style="width:100px; height: 100px; font-size:2em">Glow</button>
+  <button id="btnglow3" style="width:100px; height: 100px; font-size:2em">Glow</button>
+  <script>
+    const btn1 = document.querySelector('#btnglow1');
+    const btn2 = document.querySelector('#btnglow2');
+    const btn3 = document.querySelector('#btnglow3');
+    const glowManger = function () {
+      // normal function -> `this` binds to execution context 
+      // arrow function => `this` binds to context inherited inherit from parent
+      console.log(this.style);
+      this.style.backgroundColor = this.style.backgroundColor === 'yellow' ? "" : "yellow";
+    }
+    btn1.addEventListener('click', glowManger)
+    btn2.addEventListener('click', glowManger)
+    btn3.addEventListener('click', glowManger)
+  </script>
+</body>
+
+</html>

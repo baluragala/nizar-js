@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <button id="getUser">GET User</button>
+  <div id="container"></div>
+  <script>
+    document.querySelector("#getUser").addEventListener("click", getUser)
+    function getUser() {
+      const xmlhttp = new XMLHttpRequest();
+      xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          const container = document.querySelector("#container");
+          const user = JSON.parse(this.responseText);
+          const h1 = document.createElement("h1");
+          h1.textContent = user.login;
+          const img = document.createElement("img");
+          img.src = user.avatar_url;
+
+          container.appendChild(h1);
+          container.appendChild(img)
+        }
+      }
+      xmlhttp.open("GET", "https://api.github.com/users/baluragala", true)
+      xmlhttp.send();
+    }
+  </script>
+</body>
+
+</html>

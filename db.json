@@ -1,0 +1,99 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "title": "JS",
+      "author": "zoelearn",
+      "id": 2
+    },
+    {
+      "title": "JS",
+      "author": "zoelearn",
+      "id": 3
+    },
+    {
+      "title": "JS",
+      "author": "zoelearn",
+      "id": 4
+    },
+    {
+      "title": "JS",
+      "author": "zoelearn",
+      "id": 5
+    },
+    {
+      "title": "JS",
+      "author": "zoelearn",
+      "id": 6
+    },
+    {
+      "title": "JS",
+      "author": "zoelearn",
+      "id": 7
+    },
+    {
+      "title": "JS",
+      "author": "zoelearn",
+      "id": 8
+    },
+    {
+      "title": "JS",
+      "author": "zoelearn",
+      "id": 9
+    },
+    {
+      "title": "JS",
+      "author": "zoelearn",
+      "id": 10
+    },
+    {
+      "title": "JS",
+      "author": "zoelearn",
+      "id": 11
+    },
+    {
+      "title": "JS",
+      "author": "zoelearn",
+      "id": 12
+    },
+    {
+      "title": "JS",
+      "author": "zoelearn",
+      "id": 13
+    },
+    {
+      "title": "JS",
+      "author": "zoelearn",
+      "id": 14
+    },
+    {
+      "title": "JS",
+      "author": "zoelearn",
+      "id": 15
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    },
+    {
+      "id": 2,
+      "body": "some comment",
+      "postId": 2
+    },
+    {
+      "id": 3,
+      "body": "some comment",
+      "postId": 4
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

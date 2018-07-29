@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
+</head>
+
+<body>
+  <button id="getUser">GET User</button>
+  <button id="setPost">SET Post</button>
+  <button id="dep">DEP</button>
+  <div id="container"></div>
+  <script>
+    document.querySelector("#getUser").addEventListener("click", getUserAsync)
+    document.querySelector("#setPost").addEventListener("click", setPostAxios)
+    document.querySelector("#dep").addEventListener("click", dep)
+
+    async function dep() {
+      let response = await axios.get("http://13442296.ngrok.io/comments");
+      let comments = response.data;
+      for (let comment of comments) {
+        let postResponse = await axios.get(`http://13442296.ngrok.io/posts/${comment.postId}`);
+        let post = postResponse.data;
+        console.log(post);
+      }
+    }
+
+    async function setPostAxios() {
+      let response = await axios.post("http://13442296.ngrok.io/posts", {
+        "title": "JS",
+        "author": "zoelearn"
+      })
+      console.log(response);
+      alert(`Your new post id:${response.data.id}`)
+    }
+
+    async function setPost() {
+      let response = await fetch("http://13442296.ngrok.io/posts", {
+        method: 'POST',
+        headers: {
+          'Content-Type': "application/json"
+        },
+        body: JSON.stringify({
+          "title": "JS",
+          "author": "zoelearn"
+        })
+      })
+      console.log(response);
+      let newPost = await response.json();
+      console.log(newPost);
+      alert(`Your new post id:${newPost.id}`)
+    }
+
+    function getUser() {
+
+      fetch("https://api.github.com/users/baluragala")
+        .then(response => response.json())
+        .then(user => {
+          const container = document.querySelector("#container");
+          const h1 = document.createElement("h1");
+          h1.textContent = user.login;
+          const img = document.createElement("img");
+          img.src = user.avatar_url;
+
+          container.appendChild(h1);
+          container.appendChild(img)
+        })
+
+    }
+
+    async function getUserAsync() {
+
+      try {
+        let user = await fetch("https://api.github.com/users/baluragala").then(response => response.json())
+        const container = document.querySelector("#container");
+        const h1 = document.createElement("h1");
+        h1.textContent = user.login;
+        const img = document.createElement("img");
+        img.src = user.avatar_url;
+
+        container.appendChild(h1);
+        container.appendChild(img)
+      } catch (error) {
+        console.log(error);
+      }
+
+    }
+  </script>
+</body>
+
+</html>
